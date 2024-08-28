@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3f5fc;
+    position: relative; 
+    flex-direction: column; 
+}
+
+.logo {
+    position: relative;
+    top: 20px;
+    right: 40%;
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #21902e;
+    z-index: 1;
+}
+
+main {
+    display: flex;
+    width: 90%;
+    margin-top: 50px;
+    max-width: 1200px;
+    gap: 50px;
+    flex: 1; 
+}
+
+.input-section {
+    flex: 2;
+}
+
+.output-section {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px;
+    width: 85%;
+    flex: 1;
+    background-color: white;
+    border-radius: 24px;
+    padding: 22px 20px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    text-align: center;
+}
+
+#output-container, #output-text {    
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    width: 100%; 
+    word-wrap: break-word; 
+    overflow-x: hidden; 
+}
+
+#output-text {
+    white-space: pre-wrap; /* Respeta los saltos de línea y envuelve el texto */
+    word-break: break-word; /* Rompe palabras largas si es necesario */
+}
+
+
+textarea {
+    width: 100%;
+    height: 300px;
+    resize: none;
+    border: none;
+    background-color: transparent;
+    font-size: 32px;
+    color: #21902e;
+    padding: 10px;
+}
+
+textarea::placeholder {
+    color: #21902e;
+}
+
+.buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 24px;
+}
+
+.copy-btn {
+    position: static; /* Cambiamos de absolute a static */
+    align-self: center; /* Centramos el botón */
+    margin-top: auto; /* Empuja el botón hacia abajo */
+    padding: 10px 20px;
+    background-color: #76f676; /* Verde menta */
+    color: #ffffff; /* El color azul oscuro original para el texto */
+    border: 1px solid #226803;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none; /* El botón estará oculto por defecto */
+}
+
+.copy-btn:hover {
+    background-color: #60b560; /* Un tono más oscuro para el hover */
+
+}
+
+button {
+    padding: 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    width: 328px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Añadida transición para suavizar el hover */
+}
+
+#encrypt-btn {
+    background-color: #21902e;
+    color: white;
+    border: none;
+}
+
+#encrypt-btn:hover {
+    background-color: #17651f; /* Color más oscuro al hacer hover */
+}
+
+#decrypt-btn {
+    background-color: #d0ffd5;
+    color: #21902e;
+    border: 1px solid #21902e;
+}
+
+#decrypt-btn:hover {
+    background-color: #a7e8b0; /* Color más oscuro al hacer hover */
+    color: #17651f; /* Texto ligeramente más oscuro */
+}
+
+#placeholder-image {
+    width: 290px;
+    height: 220px;
+    margin-bottom: 16px;
+}
+
+#output-text {
+    font-size: 24px;
+    color: #495057;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: #495057;
+    font-size: 12px;
+}
+
+.info::before {
+    content: "ℹ️";
+    font-size: 16px;
+}
+
+footer {
+    position: relative; 
+    bottom: 0;
+    width: 100%; 
+    padding: 10px 20px;
+    text-align: center;
+    color: rgb(51, 49, 49);
+    border: 1px solid rgb(5, 147, 48);
+    /* border-radius: 39px; */
+    background: linear-gradient(172deg, rgba(208,255,213,1) 0%, rgba(19,128,31,1) 86%);
+    margin-top: 20px; 
+    box-sizing: border-box; 
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #output-container, #output-text {
+        margin-bottom: 10px;
+        font-size: 16px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+    }
+
+    textarea {
+        font-size: 24px; /* Reduce el tamaño de fuente en pantallas pequeñas */
+    }
+
+    .copy-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
